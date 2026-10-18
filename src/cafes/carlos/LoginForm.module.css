@@ -1,0 +1,165 @@
+.card {
+  width: 100%;
+  max-width: 440px;
+  overflow: hidden;
+  border-radius: 28px;
+  border: 1.5px solid transparent;
+  background:
+    linear-gradient(var(--surface), var(--surface)) padding-box,
+    var(--gold-grad) border-box;
+  box-shadow: 0 26px 60px rgba(120, 80, 20, 0.2);
+}
+
+/* logo fills the whole top of the card */
+.banner {
+  position: relative;
+  height: clamp(160px, 46vw, 200px);
+  background: var(--surface-2);
+}
+
+.banner::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  background: var(--gold-grad);
+}
+
+.logo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: var(--logo-fit);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 26px 22px 24px;
+}
+
+.heading {
+  margin: 0 0 8px;
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--ink);
+}
+
+.heading::after {
+  content: "";
+  display: block;
+  width: 52px;
+  height: 3px;
+  margin-top: 12px;
+  border-radius: 2px;
+  background: var(--gold-grad);
+}
+
+.hint {
+  margin: 0;
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+@media (max-width: 360px) {
+  .row {
+    grid-template-columns: 1fr;
+  }
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+
+.field label {
+  color: var(--gold-text);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.field input {
+  width: 100%;
+  height: 54px; /* comfortable thumb target */
+  padding: 0 14px;
+  font-size: 16px; /* prevents iOS zoom on focus */
+  color: var(--ink);
+  background: #fff;
+  border: 1.5px solid var(--line);
+  border-radius: 14px;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.field input::placeholder {
+  color: rgba(58, 40, 28, 0.38);
+}
+
+.field input:focus {
+  outline: none;
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(200, 153, 58, 0.28);
+}
+
+.field input:-webkit-autofill {
+  -webkit-text-fill-color: var(--ink);
+  box-shadow: 0 0 0 1000px #fff inset;
+}
+
+.inputError {
+  border-color: var(--error) !important;
+}
+
+.error {
+  color: var(--error);
+  font-size: 0.88rem;
+}
+
+.serverError {
+  margin: 0;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(179, 38, 30, 0.3);
+  background: rgba(179, 38, 30, 0.07);
+  color: #8f1d17;
+  font-size: 0.95rem;
+}
+
+.button {
+  height: 56px;
+  margin-top: 4px;
+  border: 0;
+  border-radius: 16px;
+  background: var(--gold-grad);
+  color: var(--ink);
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  box-shadow: 0 10px 24px rgba(169, 122, 34, 0.35);
+  transition: transform 0.1s, filter 0.15s;
+}
+
+.button:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+.button:disabled {
+  filter: saturate(0.6) brightness(0.92);
+  cursor: progress;
+}

@@ -8,7 +8,9 @@
     "start": "next start"
   },
   "dependencies": {
+    "html5-qrcode": "^2.3.8",
     "next": "16.4.0",
+    "qrcode.react": "^4.2.0",
     "react": "19.3.0",
     "react-dom": "19.3.0"
   },

@@ -1,0 +1,71 @@
+/* ===== Carlos theme – light, warm & cozy with gold. Used by the customer card AND the cashier page. ===== */
+.root {
+  --page-bg: #f6ede0;
+  --page-bg-2: #fffaf0;
+  --surface: #fffaf2;
+  --surface-2: #f2e5cf;
+  --ink: #3a281c;
+  --muted: #86705e;
+  --gold: #c8993a;
+  --gold-light: #f3d98f;
+  --gold-text: #8c6212; /* darker gold for small text on light backgrounds */
+  --gold-grad: linear-gradient(135deg, #f4dc96 0%, #d4a94a 50%, #a97a22 100%);
+  --line: rgba(169, 122, 34, 0.32);
+  --paper: #ffffff;
+  --success: #2c7a4b;
+  --error: #b3261e;
+  --logo-fit: cover; /* "cover" fills the banner (may crop) · "contain" shows the whole logo */
+
+  --font-display: var(--carlos-display), var(--carlos-arabic), Georgia, serif;
+  --font-body: var(--carlos-body), var(--carlos-arabic), system-ui, sans-serif;
+
+  position: relative;
+  isolation: isolate;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  padding: max(22px, env(safe-area-inset-top)) 16px max(22px, env(safe-area-inset-bottom));
+  font-family: var(--font-body);
+  font-size: 16px;
+  color: var(--ink);
+  color-scheme: light;
+  background:
+    radial-gradient(70% 45% at 50% 35%, rgba(244, 220, 150, 0.45), transparent 70%),
+    radial-gradient(120% 60% at 50% -10%, var(--page-bg-2), transparent 70%),
+    repeating-linear-gradient(45deg, rgba(169, 122, 34, 0.05) 0 1px, transparent 1px 26px),
+    repeating-linear-gradient(-45deg, rgba(169, 122, 34, 0.05) 0 1px, transparent 1px 26px),
+    var(--page-bg);
+}
+
+/* soft warm shade around the edges */
+.root::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: radial-gradient(120% 90% at 50% 40%, transparent 55%, rgba(150, 100, 40, 0.16) 100%);
+}
+
+.root > * {
+  position: relative;
+  z-index: 1;
+}
+
+.root :focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 2px;
+}
+
+.loading {
+  width: 100%;
+  max-width: 400px;
+  height: 520px;
+  border-radius: 28px;
+  background: var(--surface);
+  border: 1.5px solid var(--line);
+  opacity: 0.6;
+}
